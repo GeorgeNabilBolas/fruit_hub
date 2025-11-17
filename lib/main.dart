@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widget_previews.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fruit_hub/constants/app_text_styles.dart';
+import 'package:shimmer/shimmer.dart';
 
+import 'Core/theming/app_text_styles.dart';
+import 'features/splash/ui/splash_screen.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -25,25 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FruitHUB',
       supportedLocales: S.delegate.supportedLocales,
-      home: const Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  const Home({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          S.current.welcomeToFruitHub,
-          style: AppTextStyles.text28W700,
-        ),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
