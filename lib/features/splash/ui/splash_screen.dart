@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import '../../../Core/constants/app_assets.dart';
+import '../../../Core/widgets/custom_svg_image.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Image.asset('assets/images/app_icon.png', width: 100, height: 100),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomSvgImage(
+              path: AppAssets.svgSplashMain,
+            ),
+          ],
+        ),
       ),
     );
   }

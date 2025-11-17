@@ -36,7 +36,7 @@ void generateFolders(String basePath, String screenName) {
     '$basePath/Core/networking',
     '$basePath/Core/routing',
     '$basePath/Core/helpers',
-    '$basePath/Core/theming',
+    '$basePath/Core/constants',
     '$basePath/Core/widgets',
     '$basePath/features/$screenName/data/models',
     '$basePath/features/$screenName/data/repo',

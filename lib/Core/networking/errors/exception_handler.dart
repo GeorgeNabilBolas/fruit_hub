@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 
 import 'app_exception.dart';
 import 'mappers/dio_exception_mapper.dart';
@@ -11,15 +11,15 @@ import 'mappers/google_signin_exception_mapper.dart';
 class ExceptionHandler {
   ExceptionHandler({
     DioExceptionMapper? dioMapper,
-    FirebaseAuthExceptionMapper? firebaseMapper,
-    GoogleSignInExceptionMapper? googleMapper,
-  })  : _dioMapper = dioMapper ?? DioExceptionMapper(),
-        _firebaseMapper = firebaseMapper ?? FirebaseAuthExceptionMapper(),
-        _googleMapper = googleMapper ?? GoogleSignInExceptionMapper();
+    // FirebaseAuthExceptionMapper? firebaseMapper,
+    // GoogleSignInExceptionMapper? googleMapper,
+  }) : _dioMapper = dioMapper ?? DioExceptionMapper();
+  // _firebaseMapper = firebaseMapper ?? FirebaseAuthExceptionMapper(),
+  // _googleMapper = googleMapper ?? GoogleSignInExceptionMapper();
 
   final DioExceptionMapper _dioMapper;
-  final FirebaseAuthExceptionMapper _firebaseMapper;
-  final GoogleSignInExceptionMapper _googleMapper;
+  // final FirebaseAuthExceptionMapper _firebaseMapper;
+  // final GoogleSignInExceptionMapper _googleMapper;
 
   /// Single entry point for all exception handling
   AppException handleException(Object error) {
@@ -42,13 +42,13 @@ class ExceptionHandler {
       return _dioMapper.mapException(error);
     }
 
-    if (error is FirebaseAuthException) {
-      return _firebaseMapper.mapException(error);
-    }
+    // if (error is FirebaseAuthException) {
+    //   return _firebaseMapper.mapException(error);
+    // }
 
-    if (error is GoogleSignInException) {
-      return _googleMapper.mapException(error);
-    }
+    // if (error is GoogleSignInException) {
+    //   return _googleMapper.mapException(error);
+    // }
 
     // Default fallback
     return UnexpectedException('حدث خطأ غير متوقع: ${error.toString()}');
