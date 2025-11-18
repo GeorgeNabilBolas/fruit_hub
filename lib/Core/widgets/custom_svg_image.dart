@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
-import '../constants/app_assets.dart';
-
-/*
-dependencies:
-...
-  vector_graphics: ^1.1.19
-  vector_graphics_compiler: ^1.1.19
-flutter:
-  assets:
-    - path: assets/images/
-    - path: assets/svgs/
-      transformers:
-        - package: vector_graphics_compiler
-*/
 class CustomSvgImage extends StatelessWidget {
   const CustomSvgImage({
     super.key,
