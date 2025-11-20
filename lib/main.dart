@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       onGenerateRoute: AppRoutingHandler.generateRoute,
       theme: AppTheme.systemTheme(context),
+
       locale: const Locale('ar'),
       localizationsDelegates: const [
         S.delegate,

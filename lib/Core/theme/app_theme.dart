@@ -7,13 +7,15 @@ class AppTheme {
   AppTheme._();
 
   static ThemeData lightTheme() {
-    return ThemeData(
+    return ThemeData.light().copyWith(
+      colorScheme: const ColorScheme.light(),
       scaffoldBackgroundColor: AppColor.white,
     );
   }
 
   static ThemeData darkTheme() {
-    return ThemeData(
+    return ThemeData.dark().copyWith(
+      colorScheme: const ColorScheme.dark(),
       scaffoldBackgroundColor: AppColor.black,
     );
   }
