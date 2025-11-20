@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import '../logic/splash_navigator.dart';
+import '../../../Core/constants/app_durations.dart';
+import '../../../Core/routing/app_routes.dart';
 import 'widgets/splash_header.dart';
 import 'widgets/splash_main.dart';
 import 'widgets/splash_footer.dart';
@@ -16,9 +16,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      SplashNavigator.toOnboarding(context);
-    });
+    _navigateToNextScreen();
+  }
+
+  void _navigateToNextScreen() async {
+    await AppDurations.delaySec3();
+    if (mounted) {
+      Navigator.of(context).pushReplacementNamed(AppRoutes.onboardingRoute);
+    }
   }
 
   @override
