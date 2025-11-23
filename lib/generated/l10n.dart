@@ -351,40 +351,40 @@ class S {
   }
 
   /// `Welcome to FruitHUB`
-  String get welcomeToFruitHub {
+  String get onboardingOneTitle {
     return Intl.message(
       'Welcome to FruitHUB',
-      name: 'welcomeToFruitHub',
+      name: 'onboardingOneTitle',
       desc: '',
       args: [],
     );
   }
 
   /// `Search & Shop`
-  String get searchAndShop {
+  String get onboardingTwoTitle {
     return Intl.message(
       'Search & Shop',
-      name: 'searchAndShop',
+      name: 'onboardingTwoTitle',
       desc: '',
       args: [],
     );
   }
 
   /// `Discover an exceptional shopping experience with FruitHUB.`
-  String get discoverExperience {
+  String get onboardingOneDescription {
     return Intl.message(
       'Discover an exceptional shopping experience with FruitHUB.',
-      name: 'discoverExperience',
+      name: 'onboardingOneDescription',
       desc: '',
       args: [],
     );
   }
 
   /// `We provide the best hand-picked fruits.`
-  String get bestFruits {
+  String get onboardingTwoDescription {
     return Intl.message(
       'We provide the best hand-picked fruits.',
-      name: 'bestFruits',
+      name: 'onboardingTwoDescription',
       desc: '',
       args: [],
     );

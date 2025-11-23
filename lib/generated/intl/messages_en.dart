@@ -32,8 +32,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Already have an account? Login"),
         "appTitle": MessageLookupByLibrary.simpleMessage("FruitHub"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
-        "bestFruits": MessageLookupByLibrary.simpleMessage(
-            "We provide the best hand-picked fruits."),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "buyNowPayLater":
             MessageLookupByLibrary.simpleMessage("Buy now, pay later"),
@@ -65,8 +63,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "delivering": MessageLookupByLibrary.simpleMessage("Out for delivery"),
         "delivery": MessageLookupByLibrary.simpleMessage("Delivery:"),
         "discount25": MessageLookupByLibrary.simpleMessage("25% Off"),
-        "discoverExperience": MessageLookupByLibrary.simpleMessage(
-            "Discover an exceptional shopping experience with FruitHUB."),
         "dontWorry": MessageLookupByLibrary.simpleMessage(
             "Don’t worry, just enter your phone number."),
         "eidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
@@ -105,6 +101,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noSearchResults":
             MessageLookupByLibrary.simpleMessage("No search results"),
+        "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
+            "Discover an exceptional shopping experience with FruitHUB."),
+        "onboardingOneTitle":
+            MessageLookupByLibrary.simpleMessage("Welcome to FruitHUB"),
+        "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
+            "We provide the best hand-picked fruits."),
+        "onboardingTwoTitle":
+            MessageLookupByLibrary.simpleMessage("Search & Shop"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "orderNumber": MessageLookupByLibrary.simpleMessage("Order Number"),
         "orderPlacedSuccess":
@@ -138,7 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "saveAddress": MessageLookupByLibrary.simpleMessage("Save Address"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
-        "searchAndShop": MessageLookupByLibrary.simpleMessage("Search & Shop"),
         "searchPlaceholder":
             MessageLookupByLibrary.simpleMessage("Search for..."),
         "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
@@ -153,8 +156,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("Track Order"),
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
-        "welcomeToFruitHub":
-            MessageLookupByLibrary.simpleMessage("Welcome to FruitHUB"),
         "youHaveXItems": MessageLookupByLibrary.simpleMessage(
             "You have 3 items in your cart")
       };
