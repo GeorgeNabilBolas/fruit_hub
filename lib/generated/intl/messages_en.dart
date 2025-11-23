@@ -103,8 +103,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No search results"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             "Discover an exceptional shopping experience with FruitHUB."),
-        "onboardingOneTitle":
-            MessageLookupByLibrary.simpleMessage("Welcome to FruitHUB"),
+        "onboardingOneTitlePartOne":
+            MessageLookupByLibrary.simpleMessage("Welcome to"),
+        "onboardingOneTitlePartThree":
+            MessageLookupByLibrary.simpleMessage("HUB"),
+        "onboardingOneTitlePartTwo":
+            MessageLookupByLibrary.simpleMessage("Fruit"),
         "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
             "We provide the best hand-picked fruits."),
         "onboardingTwoTitle":

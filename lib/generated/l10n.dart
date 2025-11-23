@@ -350,11 +350,31 @@ class S {
     );
   }
 
-  /// `Welcome to FruitHUB`
-  String get onboardingOneTitle {
+  /// `Welcome to`
+  String get onboardingOneTitlePartOne {
     return Intl.message(
-      'Welcome to FruitHUB',
-      name: 'onboardingOneTitle',
+      'Welcome to',
+      name: 'onboardingOneTitlePartOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fruit`
+  String get onboardingOneTitlePartTwo {
+    return Intl.message(
+      'Fruit',
+      name: 'onboardingOneTitlePartTwo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `HUB`
+  String get onboardingOneTitlePartThree {
+    return Intl.message(
+      'HUB',
+      name: 'onboardingOneTitlePartThree',
       desc: '',
       args: [],
     );

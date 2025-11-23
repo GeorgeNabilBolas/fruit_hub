@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Core/theme/app_theme.dart';
 import 'features/splash/ui/splash_screen.dart';
@@ -15,22 +16,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateRoute: AppRoutingHandler.generateRoute,
-      theme: AppTheme.lightTheme(),
-      darkTheme: AppTheme.darkTheme(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp(
+          onGenerateRoute: AppRoutingHandler.generateRoute,
+          theme: AppTheme.lightTheme(),
+          darkTheme: AppTheme.darkTheme(),
 
-      locale: const Locale('ar'),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      debugShowCheckedModeBanner: false,
-      title: 'FruitHUB',
-      supportedLocales: S.delegate.supportedLocales,
-      home: const SplashScreen(),
+          locale: const Locale('ar'),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          debugShowCheckedModeBanner: false,
+          title: 'FruitHUB',
+          supportedLocales: S.delegate.supportedLocales,
+          home: const SplashScreen(),
+        );
+      },
     );
   }
 }

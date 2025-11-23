@@ -103,8 +103,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لاتوجد نتائج بحث"),
         "onboardingOneDescription": MessageLookupByLibrary.simpleMessage(
             "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية."),
-        "onboardingOneTitle":
-            MessageLookupByLibrary.simpleMessage("مرحبًا بك في FruitHUB"),
+        "onboardingOneTitlePartOne":
+            MessageLookupByLibrary.simpleMessage("مرحبًا بك في"),
+        "onboardingOneTitlePartThree":
+            MessageLookupByLibrary.simpleMessage("HUB"),
+        "onboardingOneTitlePartTwo":
+            MessageLookupByLibrary.simpleMessage("Fruit"),
         "onboardingTwoDescription": MessageLookupByLibrary.simpleMessage(
             "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية"),
         "onboardingTwoTitle":

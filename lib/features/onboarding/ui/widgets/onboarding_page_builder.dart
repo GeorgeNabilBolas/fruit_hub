@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../Core/constants/app_sizes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../Core/constants/app_dimensions.dart';
 import '../../data/repo/onboarding_repo.dart';
 import '../../logic/cubit/onboarding_page_controller_cubit.dart';
 import 'onboarding_page_indicator.dart';
@@ -16,23 +17,23 @@ class OnboardingPageBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Expanded(
-          child: OnBoardingPageView(),
-        ),
+        const Expanded(child: OnBoardingPageView()),
         BlocBuilder<OnboardingPageControllerCubit, int>(
           builder: (context, state) => Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: AppSizes.p32,
+            spacing: 32.h,
             children: [
               OnboardingPageIndicator(
                 currentPage: state,
-                pageCount: OnboardingRepo.pages.length,
+                pageCount: OnboardingRepo.getPages(context).length,
               ),
-              OnboardingStartButton(isVisible: state == OnboardingRepo.pages.length - 1),
+              OnboardingStartButton(
+                isVisible: state == OnboardingRepo.getPages(context).length - 1,
+              ),
             ],
           ),
         ),
-        gapH24,
+        AppDimensions.gapH24,
       ],
     );
   }

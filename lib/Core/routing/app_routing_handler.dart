@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../features/auth/ui/auth_screen.dart';
+import '../../features/onboarding/ui/onboarding_view.dart';
 import '../../features/splash/ui/splash_screen.dart';
-import '../../features/onboarding/ui/onboarding_screen.dart';
 import 'app_routes.dart';
 
 class AppRoutingHandler {
@@ -11,7 +11,7 @@ class AppRoutingHandler {
       case AppRoutes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case AppRoutes.onboardingRoute:
-        return MaterialPageRoute(builder: (_) => const OnboardingScreen());
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
       case AppRoutes.authRoute:
         return MaterialPageRoute(builder: (_) => const AuthScreen());
       default:

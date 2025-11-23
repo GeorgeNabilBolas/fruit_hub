@@ -6,7 +6,7 @@ import '../../../../generated/l10n.dart';
 import '../models/onboarding_model.dart';
 
 class OnboardingRepo {
-  static final List<OnboardingModel> pages = [
+  static List<OnboardingModel> getPages(BuildContext context) => [
     OnboardingModel(
       image: AppAssets.svgOnboardingOne,
       backgroundImage: AppAssets.svgOnboardingVectorOne,
@@ -14,34 +14,34 @@ class OnboardingRepo {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            S.current.onboardingOneTitle.substring(0, 13),
+            S.of(context).onboardingOneTitlePartOne,
             style: AppTextStyles.text23W700,
           ),
           const SizedBox(width: 4),
           Text(
-            S.current.onboardingOneTitle.substring(18, 21),
+            S.of(context).onboardingOneTitlePartTwo,
             style: AppTextStyles.text23W700.copyWith(
               color: AppColor.orange500,
             ),
           ),
           Text(
-            S.current.onboardingOneTitle.substring(13, 18),
+            S.of(context).onboardingOneTitlePartThree,
             style: AppTextStyles.text23W700.copyWith(
               color: AppColor.green1_500,
             ),
           ),
         ],
       ),
-      description: S.current.onboardingOneDescription,
+      description: S.of(context).onboardingOneDescription,
     ),
     OnboardingModel(
       image: AppAssets.svgOnboardingTwo,
       backgroundImage: AppAssets.svgOnboardingVectorTwo,
       title: Text(
-        S.current.onboardingTwoTitle,
+        S.of(context).onboardingTwoTitle,
         style: AppTextStyles.text23W700,
       ),
-      description: S.current.onboardingTwoDescription,
+      description: S.of(context).onboardingTwoDescription,
     ),
   ];
 }

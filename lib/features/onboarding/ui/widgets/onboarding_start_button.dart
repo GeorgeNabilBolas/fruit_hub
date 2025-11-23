@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../Core/constants/app_sizes.dart';
+import '../../../../Core/constants/app_dimensions.dart';
 import '../../../../Core/routing/app_routes.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
@@ -20,7 +20,7 @@ class OnboardingStartButton extends StatelessWidget {
       maintainState: true,
       maintainSize: true,
       child: Padding(
-        padding: AppSizes.paddingSymmetricH20,
+        padding: AppDimensions.paddingSymmetricH20,
         child: CustomButton(
           text: S.of(context).startNow,
           onPressed: () {
