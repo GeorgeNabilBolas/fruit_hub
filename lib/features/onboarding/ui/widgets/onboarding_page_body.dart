@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../Core/constants/app_sizes.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/widgets/custom_svg_image.dart';
@@ -20,7 +21,6 @@ class OnboardingPageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: AlignmentGeometry.topCenter,
       children: [
         Positioned(
           left: 0,
@@ -31,45 +31,46 @@ class OnboardingPageBody extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
+        Positioned(
+          top: kToolbarHeight,
+          right: AppSizes.p20,
+          child: Visibility(
+            visible: showSkipButton,
+            maintainAnimation: true,
+            maintainState: true,
+            maintainSize: true,
+            child: GestureDetector(
+              onTap: onSkip,
+              child: Text(
+                S.of(context).skip,
+                style: AppTextStyles.text13W500.copyWith(color: AppColor.gray500),
+              ),
+            ),
+          ),
+        ),
         Column(
+          spacing: AppSizes.p64,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomSvgImage(
               path: pageModel.image,
             ),
-            const SizedBox(height: 64),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 37),
+              padding: AppSizes.paddingSymmetricH38,
               child: Column(
+                spacing: AppSizes.p24,
                 children: [
                   pageModel.title,
-                  const SizedBox(height: 24),
                   Text(
                     pageModel.description,
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.text13W500.copyWith(
-                      color: AppColor.gray500,
-                    ),
+                    style: AppTextStyles.text13W500,
                   ),
                 ],
               ),
             ),
           ],
         ),
-        if (showSkipButton)
-          Positioned(
-            top: kToolbarHeight,
-            right: 20,
-            child: GestureDetector(
-              onTap: onSkip,
-              child: Text(
-                S.of(context).skip,
-                style: AppTextStyles.text13W500.copyWith(
-                  color: AppColor.gray500,
-                ),
-              ),
-            ),
-          ),
       ],
     );
   }
