@@ -24,7 +24,7 @@ class OnboardingStartButton extends StatelessWidget {
         child: CustomButton(
           text: S.of(context).startNow,
           onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.authRoute);
+            Navigator.pushReplacementNamed(context, AppRoutes.authRoute);
           },
         ),
       ),

@@ -9,11 +9,11 @@ class OnboardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        top: false,
-        child: BlocProvider(
-          create: (context) => OnboardingPageControllerCubit(),
-          child: const OnboardingPageBuilder(),
+      body: BlocProvider(
+        create: (context) => OnboardingPageControllerCubit(),
+        child: const SafeArea(
+          top: false,
+          child: OnboardingPageBuilder(),
         ),
       ),
     );

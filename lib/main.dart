@@ -7,7 +7,11 @@ import 'features/splash/ui/splash_screen.dart';
 import 'generated/l10n.dart';
 import 'Core/routing/app_routing_handler.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'Core/helpers/app_bloc_observer.dart';
+
 void main() {
+  Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
 

@@ -14,4 +14,9 @@ class AppAssets {
   static const String svgOnboardingTwo = 'assets/svgs/onboarding_two.svg';
   static const String svgOnboardingVectorOne = 'assets/svgs/onboarding_vector_one.svg';
   static const String svgOnboardingVectorTwo = 'assets/svgs/onboarding_vector_two.svg';
+
+  //auth | svg
+  static const String svgGoogleIcon = 'assets/icons/google_icon.svg';
+  static const String svgAppleIcon = 'assets/icons/apple_icon.svg';
+  static const String svgFacebookIcon = 'assets/icons/facebook_icon.svg';
 }

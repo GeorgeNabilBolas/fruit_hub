@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_view.dart';
+
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
@@ -7,9 +9,7 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Text('Auth Screen'),
-        ),
+        child: LoginView(),
       ),
     );
   }
