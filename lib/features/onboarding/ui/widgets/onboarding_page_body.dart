@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../Core/widgets/custom_svg_image.dart';
+import '../../../../core/widgets/custom_svg_image.dart';
 import '../../data/models/onboarding_model.dart';
 import 'onboarding_text_content.dart';
 import 'onboarding_skip_button.dart';

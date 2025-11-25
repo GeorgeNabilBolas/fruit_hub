@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../Core/constants/app_durations.dart';
+import '../../../../core/constants/app_durations.dart';
 
 import '../../data/repo/onboarding_repo.dart';
 import '../../logic/cubit/onboarding_page_controller_cubit.dart';

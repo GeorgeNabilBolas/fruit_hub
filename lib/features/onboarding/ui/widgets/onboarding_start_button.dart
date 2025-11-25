@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../../Core/constants/app_dimensions.dart';
-import '../../../../Core/routing/app_routes.dart';
+import '../../../../core/constants/app_dimensions.dart';
+import '../../../../core/routing/app_routes.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
+
+import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/services/app_settings_service.dart';
 
 class OnboardingStartButton extends StatelessWidget {
   const OnboardingStartButton({
@@ -24,6 +27,7 @@ class OnboardingStartButton extends StatelessWidget {
         child: CustomButton(
           text: S.of(context).startNow,
           onPressed: () {
+            getIt<AppSettingsService>().setOnboardingSeen();
             Navigator.pushReplacementNamed(context, AppRoutes.authRoute);
           },
         ),

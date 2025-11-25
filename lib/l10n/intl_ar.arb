@@ -24,7 +24,7 @@
     "loginGoogle": "تسجيل بواسطة جوجل",
     "loginApple": "تسجيل بواسطة أبل",
     "loginFacebook": "تسجيل بواسطة فيسبوك",
-    "alreadyHaveAccount": "تمتلك حساب بالفعل؟ تسجيل دخول",
+    "alreadyHaveAccount": "تمتلك حساب بالفعل؟",
     "successPasswordChange": "تم تغيير الباسورد بنجاح",
     "agreeTerms": "من خلال إنشاء حساب ، فإنك توافق على الشروط والأحكام الخاصة بنا",
     "next": "التالي",
@@ -105,5 +105,8 @@
     "pending": "قيد الانتظار",
     "delivering": "خرج للتوصيل",
     "shipped": "تم شحن الطلب",
-    "delivered": "تم تسليم"
+    "delivered": "تم تسليم",
+    "dontHaveAccount": "لا تمتلك حساب؟",
+    "termsConditionPart1": "من خلال إنشاء حساب , فإنك توافق على ",
+    "termsConditionPart2": "الشروط والأحكام الخاصة بنا"
 }

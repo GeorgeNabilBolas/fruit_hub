@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../Core/constants/app_dimensions.dart';
+import '../../../../core/constants/app_dimensions.dart';
 import '../../data/repo/onboarding_repo.dart';
 import '../../logic/cubit/onboarding_page_controller_cubit.dart';
 import 'onboarding_page_indicator.dart';

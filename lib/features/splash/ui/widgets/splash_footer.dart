@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../Core/constants/app_assets.dart';
-import '../../../../Core/widgets/custom_svg_image.dart';
+import '../../../../core/constants/app_assets.dart';
+import '../../../../core/widgets/custom_svg_image.dart';
 
 class SplashFooter extends StatelessWidget {
   const SplashFooter({super.key});

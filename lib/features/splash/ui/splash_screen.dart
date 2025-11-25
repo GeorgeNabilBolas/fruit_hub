@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../Core/constants/app_durations.dart';
-import '../../../Core/routing/app_routes.dart';
+import '../../../core/di/dependency_injection.dart';
+import '../../../core/services/app_settings_service.dart';
+import '../../../core/constants/app_durations.dart';
+import '../../../core/routing/app_routes.dart';
 import 'widgets/splash_header.dart';
 import 'widgets/splash_main.dart';
 import 'widgets/splash_footer.dart';
@@ -22,7 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToNextScreen() async {
     await AppDurations.delaySec3();
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed(AppRoutes.onboardingRoute);
+      final isOnboardingSeen = getIt<AppSettingsService>().isOnboardingSeen();
+      if (isOnboardingSeen) {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.authRoute);
+      } else {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.onboardingRoute);
+      }
     }
   }
 

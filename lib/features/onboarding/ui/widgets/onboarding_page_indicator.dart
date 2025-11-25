@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../Core/constants/app_durations.dart';
-import '../../../../Core/constants/app_dimensions.dart';
+import '../../../../core/constants/app_durations.dart';
+import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class OnboardingPageIndicator extends StatelessWidget {

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'Core/theme/app_theme.dart';
+import 'core/theme/app_theme.dart';
 import 'features/splash/ui/splash_screen.dart';
 import 'generated/l10n.dart';
-import 'Core/routing/app_routing_handler.dart';
+import 'core/routing/app_routing_handler.dart';
+import 'core/helpers/app_bloc_observer.dart';
+import 'core/di/dependency_injection.dart';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'Core/helpers/app_bloc_observer.dart';
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
+  await setupGetIt();
   runApp(const MyApp());
 }
 
@@ -29,7 +31,6 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRoutingHandler.generateRoute,
           theme: AppTheme.lightTheme(),
           darkTheme: AppTheme.darkTheme(),
-
           locale: const Locale('ar'),
           localizationsDelegates: const [
             S.delegate,

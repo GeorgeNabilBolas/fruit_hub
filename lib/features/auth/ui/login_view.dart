@@ -5,7 +5,9 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/routing/app_routes.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/custom_text_field.dart';
+import '../../../core/constants/app_dimensions.dart';
+import '../../../core/widgets/custom_scaffold_app_bar.dart';
+import '../../../core/widgets/custom_text_form_field.dart';
 import '../../../generated/l10n.dart';
 import 'widgets/social_login_button.dart';
 
@@ -15,101 +17,84 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'تسجيل دخول',
-          style: AppTextStyles.text19W700,
-        ),
-        centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+      appBar: CustomScaffoldAppBar(title: S.of(context).login),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
+            crossAxisAlignment: .start,
             children: [
-              SizedBox(height: 24.h),
-              const CustomTextField(hintText: 'البريد الإلكتروني'),
-              SizedBox(height: 16.h),
-              const CustomTextField(
-                hintText: 'كلمة المرور',
+              AppDimensions.gapH24,
+              CustomTextFormField(hintText: S.of(context).email),
+              AppDimensions.gapH16,
+              CustomTextFormField(
+                hintText: S.of(context).password,
                 obscureText: true,
-                suffixIcon: Icon(Icons.remove_red_eye, color: AppColor.gray200),
               ),
-              SizedBox(height: 16.h),
-              Align(
-                alignment: Localizations.localeOf(context).languageCode == 'en'
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'نسيت كلمة المرور؟',
-                    style: AppTextStyles.text13W700.copyWith(color: AppColor.green1_500),
-                  ),
+              AppDimensions.gapH16,
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  S.of(context).forgotPassword,
+                  style: AppTextStyles.text13W700.copyWith(color: AppColor.green1_500),
                 ),
               ),
-              SizedBox(height: 33.h),
+              AppDimensions.gapH32,
               CustomButton(
-                text: 'تسجيل دخول',
+                text: S.of(context).login,
                 onPressed: () {},
               ),
-              SizedBox(height: 33.h),
+              AppDimensions.gapH32,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'لا تمتلك حساب؟',
+                    S.of(context).dontHaveAccount,
                     style: AppTextStyles.text16W700.copyWith(color: AppColor.gray400),
                   ),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.signup);
-                    },
+                    onPressed: () => Navigator.pushNamed(context, AppRoutes.signup),
                     child: Text(
-                      'قم بإنشاء حساب',
+                      S.of(context).createAccount,
                       style: AppTextStyles.text16W700.copyWith(color: AppColor.green1_500),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 33.h),
+              AppDimensions.gapH32,
               Row(
                 children: [
                   const Expanded(child: Divider(color: AppColor.gray200)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: Text(
-                      'أو',
+                      S.of(context).or,
                       style: AppTextStyles.text16W700,
                     ),
                   ),
                   const Expanded(child: Divider(color: AppColor.gray200)),
                 ],
               ),
-              SizedBox(height: 16.h),
+              AppDimensions.gapH16,
               SocialLoginButton(
-                text: 'تسجيل بواسطة جوجل',
+                text: S.of(context).loginGoogle,
                 image: AppAssets.svgGoogleIcon,
                 onPressed: () {},
               ),
-              SizedBox(height: 16.h),
+              AppDimensions.gapH16,
               SocialLoginButton(
-                text: 'تسجيل بواسطة أبل',
+                text: S.of(context).loginApple,
                 image: AppAssets.svgAppleIcon,
                 iconColor: Theme.of(context).brightness == Brightness.dark ? AppColor.white : null,
                 onPressed: () {},
               ),
-              SizedBox(height: 16.h),
+              AppDimensions.gapH16,
               SocialLoginButton(
-                text: 'تسجيل بواسطة فيسبوك',
+                text: S.of(context).loginFacebook,
                 image: AppAssets.svgFacebookIcon,
                 onPressed: () {},
               ),
-              SizedBox(height: 32.h),
+              AppDimensions.gapH32,
             ],
           ),
         ),
