@@ -1,11 +1,6 @@
 {
-    "appTitle": "FruitHub",
-    "fullName": "الاسم كامل",
-    "fullNameAlt": "الاسم بالكامل",
-    "exampleName": "احمد مصطفي",
-    "email": "البريد الإلكتروني",
-    "exampleEmail": "Mail@email.com",
-    "password": "كلمة المرور",
+    "@@locale": "ar",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
     "phoneNumber": "رقم الهاتف",
     "examplePhone": "+1 234 567 8911",
     "login": "تسجيل دخول",

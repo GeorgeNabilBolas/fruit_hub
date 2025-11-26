@@ -1,7 +1,6 @@
-import 'package:fruit_hub/core/helpers/object_box.dart';
-
 import '../entities/app_settings.dart';
 import '../helpers/app_logger.dart';
+import '../helpers/object_box.dart';
 
 class AppSettingsService {
   AppSettingsService(this._objectBoxStore);

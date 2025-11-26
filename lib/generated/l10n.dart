@@ -54,49 +54,14 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `FruitHub`
-  String get appTitle {
-    return Intl.message('FruitHub', name: 'appTitle', desc: '', args: []);
-  }
-
-  /// `Full Name`
-  String get fullName {
-    return Intl.message('Full Name', name: 'fullName', desc: '', args: []);
-  }
-
-  /// `Full Name`
-  String get fullNameAlt {
-    return Intl.message('Full Name', name: 'fullNameAlt', desc: '', args: []);
-  }
-
-  /// `Ahmed Mostafa`
-  String get exampleName {
+  /// `Login successfully`
+  String get loginSuccess {
     return Intl.message(
-      'Ahmed Mostafa',
-      name: 'exampleName',
+      'Login successfully',
+      name: 'loginSuccess',
       desc: '',
       args: [],
     );
-  }
-
-  /// `Email`
-  String get email {
-    return Intl.message('Email', name: 'email', desc: '', args: []);
-  }
-
-  /// `Mail@email.com`
-  String get exampleEmail {
-    return Intl.message(
-      'Mail@email.com',
-      name: 'exampleEmail',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Password`
-  String get password {
-    return Intl.message('Password', name: 'password', desc: '', args: []);
   }
 
   /// `Phone Number`
@@ -117,6 +82,21 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message('Full Name', name: 'fullName', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
   }
 
   /// `Login`
@@ -369,10 +349,10 @@ class S {
     return Intl.message('Search', name: 'search', desc: '', args: []);
   }
 
-  /// `Search for...`
+  /// `Search for....`
   String get searchPlaceholder {
     return Intl.message(
-      'Search for...',
+      'Search for....',
       name: 'searchPlaceholder',
       desc: '',
       args: [],
@@ -389,9 +369,9 @@ class S {
     return Intl.message('Eid Offers', name: 'eidOffers', desc: '', args: []);
   }
 
-  /// `25% Off`
+  /// `25% Discount`
   String get discount25 {
-    return Intl.message('25% Off', name: 'discount25', desc: '', args: []);
+    return Intl.message('25% Discount', name: 'discount25', desc: '', args: []);
   }
 
   /// `Shop Now`
@@ -419,14 +399,19 @@ class S {
     return Intl.message('More', name: 'more', desc: '', args: []);
   }
 
-  /// `EGP / KG`
+  /// `Price / Kilo`
   String get pricePerKilo {
-    return Intl.message('EGP / KG', name: 'pricePerKilo', desc: '', args: []);
+    return Intl.message(
+      'Price / Kilo',
+      name: 'pricePerKilo',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `Search Results`
+  /// `Results`
   String get results {
-    return Intl.message('Search Results', name: 'results', desc: '', args: []);
+    return Intl.message('Results', name: 'results', desc: '', args: []);
   }
 
   /// `No search results`
@@ -459,39 +444,39 @@ class S {
     return Intl.message('Filter', name: 'filter', desc: '', args: []);
   }
 
-  /// `Sort by:`
+  /// `Sort By :`
   String get sortBy {
-    return Intl.message('Sort by:', name: 'sortBy', desc: '', args: []);
+    return Intl.message('Sort By :', name: 'sortBy', desc: '', args: []);
   }
 
-  /// `Price:`
+  /// `Price :`
   String get price {
-    return Intl.message('Price:', name: 'price', desc: '', args: []);
+    return Intl.message('Price :', name: 'price', desc: '', args: []);
   }
 
-  /// `Price: Low to High`
+  /// `Price (Low to High)`
   String get priceLowToHigh {
     return Intl.message(
-      'Price: Low to High',
+      'Price (Low to High)',
       name: 'priceLowToHigh',
       desc: '',
       args: [],
     );
   }
 
-  /// `Price: High to Low`
+  /// `Price (High to Low)`
   String get priceHighToLow {
     return Intl.message(
-      'Price: High to Low',
+      'Price (High to Low)',
       name: 'priceHighToLow',
       desc: '',
       args: [],
     );
   }
 
-  /// `Alphabetical`
+  /// `Alphabet`
   String get alphabet {
-    return Intl.message('Alphabetical', name: 'alphabet', desc: '', args: []);
+    return Intl.message('Alphabet', name: 'alphabet', desc: '', args: []);
   }
 
   /// `Cart`
@@ -519,9 +504,14 @@ class S {
     return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
   }
 
-  /// `Summary`
+  /// `Rating Summary`
   String get ratingSummary {
-    return Intl.message('Summary', name: 'ratingSummary', desc: '', args: []);
+    return Intl.message(
+      'Rating Summary',
+      name: 'ratingSummary',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Organic`
@@ -584,10 +574,10 @@ class S {
     );
   }
 
-  /// `Choose your payment method:`
+  /// `Choose Payment Method`
   String get choosePaymentMethod {
     return Intl.message(
-      'Choose your payment method:',
+      'Choose Payment Method',
       name: 'choosePaymentMethod',
       desc: '',
       args: [],
@@ -604,9 +594,9 @@ class S {
     );
   }
 
-  /// `Delivery:`
+  /// `Delivery :`
   String get delivery {
-    return Intl.message('Delivery:', name: 'delivery', desc: '', args: []);
+    return Intl.message('Delivery :', name: 'delivery', desc: '', args: []);
   }
 
   /// `Free`
@@ -614,10 +604,10 @@ class S {
     return Intl.message('Free', name: 'free', desc: '', args: []);
   }
 
-  /// `Buy now, pay later`
+  /// `Buy Now Pay Later`
   String get buyNowPayLater {
     return Intl.message(
-      'Buy now, pay later',
+      'Buy Now Pay Later',
       name: 'buyNowPayLater',
       desc: '',
       args: [],
@@ -649,10 +639,10 @@ class S {
     );
   }
 
-  /// `Order placed successfully!`
+  /// `Order Placed Successfully !`
   String get orderPlacedSuccess {
     return Intl.message(
-      'Order placed successfully!',
+      'Order Placed Successfully !',
       name: 'orderPlacedSuccess',
       desc: '',
       args: [],
@@ -664,24 +654,19 @@ class S {
     return Intl.message('Track Order', name: 'trackOrder', desc: '', args: []);
   }
 
-  /// `Please select your preferred payment method.`
+  /// `Please select a payment method.`
   String get pleaseSelectPayment {
     return Intl.message(
-      'Please select your preferred payment method.',
+      'Please select a payment method.',
       name: 'pleaseSelectPayment',
       desc: '',
       args: [],
     );
   }
 
-  /// `Cardholder Name`
+  /// `Card Holder`
   String get cardHolder {
-    return Intl.message(
-      'Cardholder Name',
-      name: 'cardHolder',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Card Holder', name: 'cardHolder', desc: '', args: []);
   }
 
   /// `Card Number`
@@ -809,14 +794,9 @@ class S {
     return Intl.message('Pending', name: 'pending', desc: '', args: []);
   }
 
-  /// `Out for delivery`
+  /// `Delivering`
   String get delivering {
-    return Intl.message(
-      'Out for delivery',
-      name: 'delivering',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Delivering', name: 'delivering', desc: '', args: []);
   }
 
   /// `Shipped`
@@ -839,21 +819,31 @@ class S {
     );
   }
 
-  /// `By creating an account, you agree to our `
+  /// `By creating an account, you agree to `
   String get termsConditionPart1 {
     return Intl.message(
-      'By creating an account, you agree to our ',
+      'By creating an account, you agree to ',
       name: 'termsConditionPart1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Terms and Conditions`
+  /// `our terms and conditions`
   String get termsConditionPart2 {
     return Intl.message(
-      'Terms and Conditions',
+      'our terms and conditions',
       name: 'termsConditionPart2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with magic link`
+  String get signInWithMagicLink {
+    return Intl.message(
+      'Sign in with magic link',
+      name: 'signInWithMagicLink',
       desc: '',
       args: [],
     );

@@ -32,7 +32,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("FruitHub"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
     "buyNowPayLater": MessageLookupByLibrary.simpleMessage(
@@ -75,12 +74,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
     ),
     "eidOffers": MessageLookupByLibrary.simpleMessage("عروض العيد"),
-    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
     "enterCodeSentTo": MessageLookupByLibrary.simpleMessage(
       "أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي",
     ),
-    "exampleEmail": MessageLookupByLibrary.simpleMessage("Mail@email.com"),
-    "exampleName": MessageLookupByLibrary.simpleMessage("احمد مصطفي"),
     "examplePhone": MessageLookupByLibrary.simpleMessage("+1 234 567 8911"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الصلاحيه"),
     "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
@@ -90,8 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نسيت كلمة المرور",
     ),
     "free": MessageLookupByLibrary.simpleMessage("مجاني"),
-    "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
-    "fullNameAlt": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
+    "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "general": MessageLookupByLibrary.simpleMessage("عام"),
     "help": MessageLookupByLibrary.simpleMessage("المساعده"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
@@ -102,6 +98,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل بواسطة فيسبوك",
     ),
     "loginGoogle": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+    "loginSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح",
+    ),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "makeDefaultCard": MessageLookupByLibrary.simpleMessage(
       "جعل البطاقة افتراضية",
@@ -163,6 +162,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "shipped": MessageLookupByLibrary.simpleMessage("تم شحن الطلب"),
     "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
     "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الان"),
+    "signInWithMagicLink": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول برابط سحري",
+    ),
     "signup": MessageLookupByLibrary.simpleMessage("حساب جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "sortBy": MessageLookupByLibrary.simpleMessage("ترتيب حسب :"),

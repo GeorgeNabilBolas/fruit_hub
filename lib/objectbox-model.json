@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:2360494694262520974",
-      "lastPropertyId": "2:9127160790851770707",
+      "lastPropertyId": "3:986475790447344758",
       "name": "AppSettings",
       "properties": [
         {
@@ -31,7 +31,9 @@
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    986475790447344758
+  ],
   "retiredRelationUids": [],
   "version": 1
 }
