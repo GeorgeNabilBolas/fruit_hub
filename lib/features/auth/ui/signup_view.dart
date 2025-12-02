@@ -46,16 +46,24 @@ class _SignupViewState extends State<SignupView> {
         ),
         body: BlocConsumer<SignupCubit, SignupState>(
           listener: (context, state) {
-            if (state is SignupSuccess) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Account created successfully!')),
-              );
-              Navigator.pop(context);
-            } else if (state is SignupFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.message)),
-              );
-            }
+            state.maybeWhen(
+              orElse: () {},
+              success: (userModel) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      'Hi, ${userModel.name} you have successfully signed up!',
+                    ),
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              failure: (error) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(error)),
+                );
+              },
+            );
           },
           builder: (context, state) {
             return SingleChildScrollView(
@@ -82,18 +90,19 @@ class _SignupViewState extends State<SignupView> {
                     AppDimensions.gapH16,
                     const TermsAndConditionsWidget(),
                     AppDimensions.gapH32,
-                    state is SignupLoading
-                        ? const Center(child: CircularProgressIndicator())
-                        : CustomButton(
-                            text: S.of(context).createAccount,
-                            onPressed: () {
-                              context.read<SignupCubit>().signup(
-                                name: _nameController.text,
-                                email: _emailController.text,
-                                password: _passwordController.text,
-                              );
-                            },
-                          ),
+                    state.maybeWhen(
+                      loading: () => const Center(child: CircularProgressIndicator()),
+                      orElse: () => CustomButton(
+                        text: S.of(context).signup,
+                        onPressed: () {
+                          context.read<SignupCubit>().signup(
+                            _nameController.text,
+                            _emailController.text,
+                            _passwordController.text,
+                          );
+                        },
+                      ),
+                    ),
                     AppDimensions.gapH24,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

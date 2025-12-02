@@ -42,17 +42,19 @@ class _LoginViewState extends State<LoginView> {
         appBar: CustomScaffoldAppBar(title: S.of(context).login),
         body: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
-            if (state is LoginSuccess) {
-              // Navigate to home or dashboard
-              // Navigator.pushReplacementNamed(context, AppRoutes.home);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(S.of(context).loginSuccess)),
-              );
-            } else if (state is LoginFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.message)),
-              );
-            }
+            state.maybeWhen(
+              success: (userCredential) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(S.of(context).loginSuccess)),
+                );
+              },
+              failure: (error) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(error)),
+                );
+              },
+              orElse: () {},
+            );
           },
           builder: (context, state) {
             return SingleChildScrollView(
@@ -81,17 +83,18 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                     AppDimensions.gapH32,
-                    state is LoginLoading
-                        ? const Center(child: CircularProgressIndicator())
-                        : CustomButton(
-                            text: S.of(context).login,
-                            onPressed: () {
-                              context.read<LoginCubit>().login(
-                                _emailController.text,
-                                _passwordController.text,
-                              );
-                            },
-                          ),
+                    state.maybeWhen(
+                      loading: () => const Center(child: CircularProgressIndicator()),
+                      orElse: () => CustomButton(
+                        text: S.of(context).login,
+                        onPressed: () {
+                          context.read<LoginCubit>().login(
+                            _emailController.text,
+                            _passwordController.text,
+                          );
+                        },
+                      ),
+                    ),
                     AppDimensions.gapH32,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

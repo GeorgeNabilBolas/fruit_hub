@@ -1,41 +1,45 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/errors/exception_handler.dart';
 import '../models/user_model.dart';
 
 class AuthRepo {
-  final FirebaseAuth _firebaseAuth;
+  AuthRepo(this._firestore);
   final FirebaseFirestore _firestore;
 
-  AuthRepo(this._firebaseAuth, this._firestore);
-
-  Future<void> login({required String email, required String password}) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+  Future<ApiResult<UserModel>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      final UserModel userModel = UserModel.fromFirebaseUser(credential.user!);
+      return ApiResult.success(userModel);
+    } catch (e) {
+      return ApiResult.failure(ExceptionHandler.handleException(e));
+    }
   }
 
-  Future<void> signup({
+  Future<ApiResult<UserModel>> createUserWithEmailAndPassword({
     required String name,
     required String email,
     required String password,
   }) async {
-    UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-
-    User? user = userCredential.user;
-    if (user != null) {
-      await user.updateDisplayName(name);
-
-      UserModel userModel = UserModel(
-        uid: user.uid,
+    try {
+      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
-        name: name,
+        password: password,
       );
-
-      await _firestore.collection('users').doc(user.uid).set(userModel.toJson());
+      await credential.user!.updateDisplayName(name);
+      final UserModel userModel = UserModel.fromFirebaseUser(credential.user!);
+      await _firestore.collection('users').doc(credential.user!.uid).set(userModel.toJson());
+      return ApiResult.success(userModel);
+    } catch (e) {
+      return ApiResult.failure(ExceptionHandler.handleException(e));
     }
   }
 }

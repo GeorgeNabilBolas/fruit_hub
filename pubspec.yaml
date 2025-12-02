@@ -19,7 +19,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  freezed: ^3.2.3
+  freezed_annotation: ^3.1.0
   get_it: ^9.1.0
+  google_sign_in: ^7.2.0
   objectbox: ^5.0.2
   objectbox_flutter_libs: ^5.0.2
   vector_graphics: ^1.1.19

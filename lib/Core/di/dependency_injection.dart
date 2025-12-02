@@ -17,7 +17,7 @@ Future<void> setupGetIt() async {
   // Auth
   getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   getIt.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
-  getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt(), getIt()));
+  getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 }

@@ -1,13 +1,16 @@
-abstract class LoginState {}
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class LoginInitial extends LoginState {}
+import '../data/models/user_model.dart';
 
-class LoginLoading extends LoginState {}
+part 'login_state.freezed.dart';
 
-class LoginSuccess extends LoginState {}
+@freezed
+class LoginState with _$LoginState {
+  const LoginState._();
 
-class LoginFailure extends LoginState {
-  final String message;
-
-  LoginFailure(this.message);
+  factory LoginState.initial() = _LoginInitial;
+  factory LoginState.loading() = _LoginLoading;
+  factory LoginState.success(UserModel user) = _LoginSuccess;
+  factory LoginState.failure(String message) = _LoginFailure;
 }

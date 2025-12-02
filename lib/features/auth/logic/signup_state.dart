@@ -1,13 +1,13 @@
-abstract class SignupState {}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class SignupInitial extends SignupState {}
+import '../data/models/user_model.dart';
 
-class SignupLoading extends SignupState {}
+part 'signup_state.freezed.dart';
 
-class SignupSuccess extends SignupState {}
-
-class SignupFailure extends SignupState {
-  final String message;
-
-  SignupFailure(this.message);
+@freezed
+class SignupState with _$SignupState {
+  const factory SignupState.initial() = _Initial;
+  const factory SignupState.loading() = _Loading;
+  const factory SignupState.success(UserModel user) = _Success;
+  const factory SignupState.failure(String message) = _Failure;
 }

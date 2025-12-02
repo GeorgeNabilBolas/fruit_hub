@@ -12,17 +12,17 @@ class DioExceptionMapper implements ExceptionMapper {
 
     switch (error.type) {
       case DioExceptionType.cancel:
-        return const NetworkException('تم الالغاء الاتصال بالخادم');
+        return const NetworkException('connection to server was canceled');
       case DioExceptionType.connectionTimeout:
       case DioExceptionType.receiveTimeout:
-        return const NetworkException('خطا في وقف الاتصال بالخادم');
+        return const NetworkException('connection to server was timed out');
       case DioExceptionType.connectionError:
       case DioExceptionType.unknown:
-        return const NetworkException('لا يوجد اتصال بالإنترنت');
+        return const NetworkException('no internet connection');
       case DioExceptionType.badResponse:
         return _handleBadResponse(error.response);
       case DioExceptionType.sendTimeout:
-        return const NetworkException('وقت ارسال البيانات انتهت');
+        return const NetworkException('send timeout');
       case DioExceptionType.badCertificate:
         return const AuthenticationException('Bad certificate');
       default:
@@ -36,25 +36,25 @@ class DioExceptionMapper implements ExceptionMapper {
     }
 
     final statusCode = response?.statusCode ?? 0;
-    
+
     switch (statusCode) {
       case 400:
-        return const ValidationException('خطا في طلب البيانات');
+        return const ValidationException('bad request');
       case 401:
       case 403:
         return AuthenticationException(_extractErrorMessage(response));
       case 404:
         return NetworkException(_extractErrorMessage(response));
       case 408:
-        return const NetworkException('خطا في وقف الاتصال بالخادم');
+        return const NetworkException('connection to server was timed out');
       case 409:
-        return const ValidationException('خطأ بسبب تعارض');
+        return const ValidationException('error due to conflict');
       case 422:
         return ValidationException(_extractErrorMessage(response));
       case 500:
-        return const NetworkException('خطأ في الخادم الداخلي');
+        return const NetworkException('server error');
       case 503:
-        return const NetworkException('الخدمة غير متاحة');
+        return const NetworkException('service unavailable');
       default:
         return NetworkException('Received invalid status code: $statusCode');
     }

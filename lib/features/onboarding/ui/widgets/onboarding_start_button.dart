@@ -28,7 +28,7 @@ class OnboardingStartButton extends StatelessWidget {
           text: S.of(context).startNow,
           onPressed: () {
             getIt<AppSettingsService>().setOnboardingSeen();
-            Navigator.pushReplacementNamed(context, AppRoutes.authRoute);
+            Navigator.pushReplacementNamed(context, AppRoutes.login);
           },
         ),
       ),

@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (mounted) {
       final isOnboardingSeen = getIt<AppSettingsService>().isOnboardingSeen();
       if (isOnboardingSeen) {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.authRoute);
+        Navigator.of(context).pushReplacementNamed(AppRoutes.login);
       } else {
         Navigator.of(context).pushReplacementNamed(AppRoutes.onboardingRoute);
       }
